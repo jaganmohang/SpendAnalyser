@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/jaganmohana/projects/Exercises/SpendAnalyser/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/jaganmohana/.gradle/caches/transforms-2/files-2.1/1e37b4de08b8d13013cf7580e54db419/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    },
+                    "to": {
+                        "startLines": "13",
+                        "startColumns": "4",
+                        "startOffsets": "625",
+                        "endLines": "17",
+                        "endColumns": "13",
+                        "endOffsets": "897"
+                    }
+                },
+                {
+                    "source": "/Users/jaganmohana/.gradle/caches/transforms-2/files-2.1/933da1ef72def01403e2ad72eb3d05e9/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,108,165,217,273,329,376,421,471,518,576",
+                        "endColumns": "52,56,51,55,55,46,44,49,46,57,48",
+                        "endOffsets": "103,160,212,268,324,371,416,466,513,571,620"
+                    }
+                }
+            ]
+        }
+    ]
+}

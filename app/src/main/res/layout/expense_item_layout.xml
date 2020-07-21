@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.jagan.spendanalayser.utils.DataConverter" />
+
+        <variable
+            name="expense"
+            type="com.jagan.spendanalayser.data.db.entity.Spend" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp_4"
+        app:cardElevation="@dimen/dp_2"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            tools:ignore="RtlCompat">
+
+            <TextView
+                android:id="@+id/tvExpenseTitle"
+                style="@style/ETextView.MediumLarge.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{expense.categoryName}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Food" />
+
+            <TextView
+                android:id="@+id/tvExpenseTime"
+                style="@style/ETextView.Small.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{"Time: "+DataConverter.timeFromDate(expense.time)}'
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvExpenseTitle"
+                tools:text="Time: 10:00 AM" />
+
+            <ImageButton
+                android:id="@+id/ibDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"
+                android:contentDescription="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_delete" />
+
+            <TextView
+                android:id="@+id/tvExpenseDesc"
+                style="@style/ETextView.Small.DarkGrey"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:text='@{"Reason: "+expense.description}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvExpenseAmount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvExpenseTime"
+                tools:text="Reason: Biryani at MehFil" />
+
+            <TextView
+                android:id="@+id/tvExpenseAmount"
+                style="@style/ETextView.MediumLarge.Red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{DataConverter.convertToString(expense.amount,true)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvExpenseTime"
+                tools:text="Rs.10" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

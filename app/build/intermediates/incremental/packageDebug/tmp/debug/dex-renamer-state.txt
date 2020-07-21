@@ -1,0 +1,13 @@
+#Tue Jul 21 16:51:30 IST 2020
+path.3=classes2.dex
+path.2=classes.dex
+path.1=classes.dex
+path.0=classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+base.3=/Users/jaganmohana/projects/Exercises/SpendAnalyser/app/build/intermediates/transforms/dexMerger/debug/3
+base.2=/Users/jaganmohana/projects/Exercises/SpendAnalyser/app/build/intermediates/transforms/dexMerger/debug/3
+base.1=/Users/jaganmohana/projects/Exercises/SpendAnalyser/app/build/intermediates/transforms/dexMerger/debug/1
+base.0=/Users/jaganmohana/projects/Exercises/SpendAnalyser/app/build/intermediates/transforms/dexMerger/debug/0

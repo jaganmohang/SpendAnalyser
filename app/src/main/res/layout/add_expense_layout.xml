@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="expenseViewModel"
+            type="com.jagan.spendanalayser.ui.newspend.NewExpenseViewModel" />
+
+        <variable
+            name="expenseHandler"
+            type="com.jagan.spendanalayser.ui.newspend.NewExpenseBottomSheet.ExpenseHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.newspend.NewExpenseBottomSheet">
+
+        <TextView
+            android:id="@+id/tvAddNewExpenseLabel"
+            style="@style/ETextView.Medium.Black"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_12"
+            android:text="@string/title_new_expense"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Add¬ Expense" />
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorTransparent"
+            android:contentDescription="@null"
+            android:onClick="@{ view -> expenseHandler.onCancelClick(view)}"
+            app:layout_constraintBottom_toTopOf="@id/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_close_black" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_1"
+            android:background="@drawable/divider"
+            android:contentDescription="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddNewExpenseLabel" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dp_16" />
+
+
+        <TextView
+            android:id="@+id/tvTimeLabel"
+            style="@style/ETextView.Small.DarkGrey"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/label_date"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="Date" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            style="@style/ETextView.Medium.Black"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_date_black"
+            android:onClick="@{ view -> expenseHandler.onDateClick(view)}"
+            android:text="@{expenseViewModel.expenseTime}"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvTimeLabel"
+            tools:text="12 Nov,2019 12:12 PM" />
+
+        <TextView
+            android:id="@+id/tvCategoryLabel"
+            style="@style/ETextView.Small.DarkGrey"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/label_category"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvTime"
+            tools:text="Category" />
+
+
+        <TextView
+            android:id="@+id/spCategory"
+            style="@style/ETextView.Medium.Black"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_more_black"
+            android:onClick="@{view -> expenseHandler.onShowCategoriesClick(view)}"
+            android:text="@{expenseViewModel.expenseCategoryTitle}"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvCategoryLabel"
+            tools:text="Food" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAmount"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:hint="@string/hint_amount"
+            android:textColorHint="@color/colorDarkGrey"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/spCategory">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:maxLength="10"
+                android:text="@={expenseViewModel.expenseAmount}"
+                tools:targetApi="lollipop" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDescription"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:hint="@string/hint_desc"
+            android:textColorHint="@color/colorDarkGrey"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tilAmount">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLength="50"
+                android:text="@={expenseViewModel.expenseDescription}"
+                tools:targetApi="lollipop" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btnAdd"
+            style="@style/EButton.ColorAccent"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:onClick="@{view -> expenseHandler.onAddClick(view)}"
+            android:text="@string/label_add"
+            app:enableButton="@{expenseViewModel.enableExpenseButton}"
+            app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tilDescription" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dp_16" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/dp_16" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

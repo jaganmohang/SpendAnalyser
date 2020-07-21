@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="budget"
+            type="com.jagan.spendanalayser.model.BudgetItem" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp_4"
+        app:cardElevation="@dimen/dp_4"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_4">
+
+            <TextView
+                android:id="@+id/tvCategoryName"
+                style="@style/ETextView.Medium.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{budget.categoryName}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPlannedLabel"
+                style="@style/ETextView.Small.DarkGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="@string/label_planned_amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCategoryName" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPlannedAmount"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_4"
+                android:focusableInTouchMode="true"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:text="@{budget.plannedAmount}"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvPlannedLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvPlannedLabel"
+                app:layout_constraintTop_toBottomOf="@id/tvCategoryName" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

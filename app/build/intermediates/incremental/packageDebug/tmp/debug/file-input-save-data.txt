@@ -1,0 +1,19 @@
+#Internal package file, do not edit.
+#Tue Jul 21 16:51:30 IST 2020
+1.base=/Users/jaganmohana/projects/Exercises/SpendAnalyser/app/build/intermediates/transforms/dexMerger/debug/3
+2.path=classes.dex
+0.baseType=DIRECTORY
+3.baseType=DIRECTORY
+2.base=/Users/jaganmohana/projects/Exercises/SpendAnalyser/app/build/intermediates/transforms/dexMerger/debug/0
+3.set=DEX
+2.set=DEX
+1.baseType=DIRECTORY
+3.path=classes2.dex
+count=4
+1.set=DEX
+0.path=classes.dex
+3.base=/Users/jaganmohana/projects/Exercises/SpendAnalyser/app/build/intermediates/transforms/dexMerger/debug/3
+0.set=DEX
+0.base=/Users/jaganmohana/projects/Exercises/SpendAnalyser/app/build/intermediates/transforms/dexMerger/debug/1
+2.baseType=DIRECTORY
+1.path=classes.dex

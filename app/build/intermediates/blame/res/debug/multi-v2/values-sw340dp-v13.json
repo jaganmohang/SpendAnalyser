@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/jaganmohana/projects/Exercises/SpendAnalyser/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw340dp-v13/values-sw340dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/jaganmohana/.gradle/caches/transforms-2/files-2.1/933da1ef72def01403e2ad72eb3d05e9/res/values-sw340dp-v13/values-sw340dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,108,165,217,273,318,368",
+                        "endColumns": "52,56,51,55,44,49,48",
+                        "endOffsets": "103,160,212,268,313,363,412"
+                    }
+                }
+            ]
+        }
+    ]
+}

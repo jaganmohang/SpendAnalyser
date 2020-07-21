@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Expense Analyser</string>
+
+    <string name="tab_text_analysis">Analysis</string>
+    <string name="tab_text_expenses">Expenses</string>
+
+    <!--titles-->
+    <string name="title_new_expense">Add Expense</string>
+    <string name="title_choose_month">Choose Month</string>
+    <string name="title_categories">Categories</string>
+    <string name="title_category_new">Add Category</string>
+    <string name="title_budget_plan">Budget Plan</string>
+    <string name="title_current_budget_plan">Current Budget Plan</string>
+    <string name="title_edit">Edit</string>
+    <string name="title_update">Update</string>
+
+    <!--Labels-->
+    <string name="label_details">Details</string>
+    <string name="label_add">Add Expense</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_time">Time</string>
+    <string name="label_date">Date</string>
+    <string name="label_categories">Categories</string>
+    <string name="label_category">Category</string>
+    <string name="label_expense_time">Expense Date&amp;Time</string>
+    <string name="label_ok">OK</string>
+    <string name="label_change_month">Change</string>
+    <string name="label_expense_summary">Expense Summary</string>
+    <string name="label_planned">Planned Amount</string>
+    <string name="label_planned_amount">Planned Amount:</string>
+    <string name="label_spent">Spent Amount</string>
+    <string name="label_to_add">to add</string>
+    <string name="label_click">Click</string>
+    <string name="label_add_category">Add Category</string>
+    <string name="label_separator">-</string>
+    <string name="label_saved">Saved</string>
+    <string name="label_overspent">Overspend</string>
+    <string name="label_planned_spent">Planned vs Spent</string>
+    <string name="label_category_wise">Category wise:</string>
+    <string name="label_choose_google_account">Choose Google Account</string>
+    <string name="label_skip">
+        <u>Skip</u>
+    </string>
+    <string name="label_important">IMPORTANT</string>
+
+    <!--Hints-->
+    <string name="hint_desc">Reason</string>
+    <string name="hint_amount">Amount</string>
+    <string name="hint_amount_in_rupees">Note: Amount in Indian Rupees(\u20B9)</string>
+
+    <string name="rs_symbol">\u20B9</string>
+
+    <string name="msg_quote">\" Beware of little expenses. A small leak will sink a great ship.\"</string>
+    <string name="msg_no_data_available">No expenses for the month</string>
+    <string name="msg_no_expenses">No expenses for the day</string>
+    <string name="msg_backup_restore">Choose Google account to backup/restore your data. This ensures no loss of data in
+        case of app uninstall/install and when you upgrade to new device.\n\n<b>Note:</b> Data will not be backup
+        successfully if your Google Drive has no enough available space.
+    </string>
+
+</resources>

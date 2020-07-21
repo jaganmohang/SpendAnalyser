@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dateItem"
+            type="com.jagan.spendanalayser.model.DateItem" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llDateItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_4">
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/date_bg_default"
+            android:gravity="center"
+            android:paddingStart="@dimen/dp_30"
+            android:paddingTop="@dimen/dp_6"
+            android:paddingEnd="@dimen/dp_30"
+            android:paddingBottom="@dimen/dp_6"
+            android:text="@{dateItem.displayValue}"
+            android:textColor="@color/colorBlack"
+            tools:background="@drawable/date_bg_default"
+            tools:text="12-Dec-2019" />
+    </LinearLayout>
+
+</layout>

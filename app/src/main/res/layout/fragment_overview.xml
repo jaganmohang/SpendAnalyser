@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlSymmetry">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.overview.OverviewFragment">
+
+        <include
+            android:id="@+id/layoutNoAnalysis"
+            layout="@layout/layout_no_expenses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/chartExpenses"
+                    android:layout_width="@dimen/dp_300"
+                    android:layout_height="@dimen/dp_300"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvPlanned"
+                    style="@style/ETextView.Small.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="@string/label_planned"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chartExpenses" />
+
+                <TextView
+                    android:id="@+id/separator1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_separator"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvPlanned"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetails" />
+
+                <TextView
+                    android:id="@+id/tvPlannedAmount"
+                    style="@style/ETextView.Small.Black.Bold"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_30"
+                    android:gravity="end"
+                    android:paddingStart="@dimen/dp_10"
+                    android:text="12,000"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvPlanned"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/separator1"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetails" />
+
+                <TextView
+                    android:id="@+id/tvSpent"
+                    style="@style/ETextView.Small.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:text="@string/label_spent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPlanned" />
+
+                <TextView
+                    android:id="@+id/separator2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_separator"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvSpent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPlanned" />
+
+                <TextView
+                    android:id="@+id/tvSpentAmount"
+                    style="@style/ETextView.Small.Black.Bold"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_30"
+                    android:gravity="end"
+                    android:paddingStart="@dimen/dp_10"
+                    android:text="12,000"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvSpent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/separator2"
+                    app:layout_constraintTop_toBottomOf="@id/tvPlanned" />
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@drawable/divider"
+                    app:layout_constraintEnd_toEndOf="@id/tvSpentAmount"
+                    app:layout_constraintStart_toStartOf="@id/tvSpent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSpent" />
+
+                <TextView
+                    android:id="@+id/tvDifference"
+                    style="@style/ETextView.Small.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:text="Saved"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+                <TextView
+                    android:id="@+id/separator3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_separator"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvDifference"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+                <TextView
+                    android:id="@+id/tvDifferenceAmount"
+                    style="@style/ETextView.Small.Bold"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_30"
+                    android:gravity="end"
+                    android:paddingStart="@dimen/dp_10"
+                    android:text="12,000"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvDifference"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/separator3"
+                    app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+                <TextView
+                    android:id="@+id/tvDetails"
+                    style="@style/ETextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:paddingStart="@dimen/dp_10"
+                    android:text="@string/label_category_wise"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDifference" />
+
+                <TextView
+                    android:id="@+id/tvDetails2"
+                    style="@style/ETextView.Medium.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/dp_4"
+                    android:text="@string/label_planned_spent"
+                    android:textStyle="italic"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvDetails"
+                    app:layout_constraintStart_toEndOf="@id/tvDetails"
+                    app:layout_constraintTop_toBottomOf="@id/tvDifference" />
+
+                <LinearLayout
+                    android:id="@+id/llHeaders"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetails">
+
+                    <TextView
+                        android:id="@+id/tvCategory"
+                        style="@style/ETextView.Small.Black"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="@string/label_category" />
+
+                    <TextView
+                        android:id="@+id/tvPlannedLabel"
+                        style="@style/ETextView.Small.Black"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="@string/label_planned" />
+
+                    <TextView
+                        android:id="@+id/tvSpentLabel"
+                        style="@style/ETextView.Small.Black"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="@string/label_spent" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@drawable/divider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llHeaders" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvExpenseDetails"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+                <TextView
+                    android:id="@+id/tvAmountInRupees"
+                    style="@style/ETextView.Small.DarkGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/dp_10"
+                    android:text="@string/hint_amount_in_rupees"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvExpenseDetails" />
+
+                <TextView
+                    android:id="@+id/tvFinancialTip"
+                    style="@style/ETextView.Medium.DarkGrey"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:gravity="center_horizontal"
+                    android:text="@string/msg_quote"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAmountInRupees" />
+
+                <TextView
+                    android:id="@+id/tvFinancialTipAuthor"
+                    style="@style/ETextView.Medium.DarkGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingEnd="@dimen/dp_10"
+                    android:text="- Benjamin Franklin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvFinancialTip" />
+
+                <Space
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvFinancialTipAuthor" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</layout>

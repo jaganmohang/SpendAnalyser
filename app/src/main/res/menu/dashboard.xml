@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/actionAddExpense"
+        android:icon="@drawable/ic_add_white"
+        android:title="@string/label_add"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/actionCategories"
+        android:title="@string/label_categories"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/actionBudget"
+        android:title="@string/title_budget_plan"
+        app:showAsAction="never" />
+</menu>

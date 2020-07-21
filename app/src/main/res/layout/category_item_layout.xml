@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="category"
+                type="com.jagan.spendanalayser.data.db.entity.Category"/>
+    </data>
+
+    <LinearLayout android:id="@+id/categoryItemView"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:padding="@dimen/dp_16"
+                  tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+                android:id="@+id/imgCategory"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/ic_money"/>
+
+        <TextView
+                android:id="@+id/tvCategoryTitle"
+                style="@style/ETextView.Medium.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@{category.name}"
+                tools:text="Food"/>
+    </LinearLayout>
+
+</layout>

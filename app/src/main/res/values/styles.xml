@@ -1,0 +1,134 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="colorControlNormal">@color/colorDarkGrey</item>
+        <item name="colorControlActivated">@color/colorBlack</item>
+        <item name="colorControlHighlight">@color/colorBlack</item>
+        <item name="actionMenuTextColor">@color/colorWhite</item>
+        <item name="android:actionMenuTextColor">@color/colorWhite</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_bg</item>
+    </style>
+
+    <style name="TextAppearance.App.TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorDarkGrey</item>
+    </style>
+    <!--TextView styles-->
+    <style name="ETextView" parent="@android:style/TextAppearance" />
+
+    <!--Small styles-->
+    <style name="ETextView.Small" parent="ETextView">
+        <item name="android:textSize">@dimen/textSmall</item>
+    </style>
+
+    <style name="ETextView.Small.Bold" parent="ETextView.Small">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ETextView.Small.Black" parent="ETextView.Small">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="ETextView.Small.White" parent="ETextView.Small">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="ETextView.Small.White.Bold" parent="ETextView.Small.White">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ETextView.Small.Black.Bold" parent="ETextView.Small.Black">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ETextView.Small.DarkGrey" parent="ETextView.Small">
+        <item name="android:textColor">@color/colorDarkGrey</item>
+    </style>
+
+    <style name="ETextView.Small.ColorPrimary" parent="ETextView.Small">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <!--Medium styles-->
+    <style name="ETextView.Medium" parent="ETextView">
+        <item name="android:textSize">@dimen/textMedium</item>
+    </style>
+
+    <style name="ETextView.Medium.Black" parent="ETextView.Medium">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="ETextView.Medium.DarkGrey" parent="ETextView.Medium">
+        <item name="android:textColor">@color/colorDarkGrey</item>
+    </style>
+
+    <style name="ETextView.Medium.ColorPrimary" parent="ETextView.Medium">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <!--MediumLarge styles-->
+    <style name="ETextView.MediumLarge" parent="ETextView">
+        <item name="android:textSize">@dimen/textMediumLarge</item>
+    </style>
+
+    <style name="ETextView.MediumLarge.Black" parent="ETextView.MediumLarge">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="ETextView.MediumLarge.Red" parent="ETextView.MediumLarge">
+        <item name="android:textColor">@color/colorRed</item>
+    </style>
+
+    <style name="ETextView.MediumLarge.Red.Bold" parent="ETextView.MediumLarge.Red">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ETextView.MediumLarge.Black.Bold" parent="ETextView.MediumLarge.Black">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ETextView.MediumLarge.DarkGrey" parent="ETextView.MediumLarge">
+        <item name="android:textColor">@color/colorDarkGrey</item>
+    </style>
+
+    <style name="ETextView.MediumLarge.ColorAccent" parent="ETextView.MediumLarge">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="ETextView.MediumLarge.ColorAccent.Bold" parent="ETextView.MediumLarge.ColorAccent">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ETextView.MediumLarge.ColorPrimary" parent="ETextView.MediumLarge">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="ETextView.MediumLarge.ColorPrimary.Bold" parent="ETextView.MediumLarge.ColorPrimary">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--Button styles-->
+
+    <style name="EButton" parent="@style/Widget.AppCompat.Button" />
+
+    <style name="EButton.ColorAccent" parent="EButton">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@drawable/button_bg</item>
+    </style>
+
+</resources>
